@@ -8,21 +8,25 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import PrivateRoute from "./components/PrivateRoute";
 
 const App = () => {
   return (
     <BrowserRouter>
-    <Header/>
+      <Header />
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/about" element={<About/>}></Route>
+        <Route path="/about" element={<About />}></Route>
         <Route path="/sign-in" element={<SignIn></SignIn>}></Route>
         <Route path="/sign-up" element={<SignUp></SignUp>}></Route>
-        <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+        <Route element={<PrivateRoute />}>
+          <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+        </Route>
+
         <Route path="/projects" element={<Projects></Projects>}></Route>
         {/* <Route path="/" element={<></>}></Route> */}
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 };
