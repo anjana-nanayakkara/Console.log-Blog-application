@@ -9,6 +9,7 @@ import Projects from "./pages/Projects";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PrivateRoute from "./components/PrivateRoute";
+import Test from "./pages/test";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/about" element={<About />}></Route>
         <Route path="/sign-in" element={<SignIn></SignIn>}></Route>
         <Route path="/sign-up" element={<SignUp></SignUp>}></Route>
+        <Route path="/test" element={<Test/>}></Route>
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         </Route>
